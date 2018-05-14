@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all.map{ |c| [c.name, c.id]}
+    @categories = Category.where(:user_id => current_user).map{ |c| [c.name, c.id]}
   end
 
   # GET /products/1
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @product.destroy
     respond_to do |format|

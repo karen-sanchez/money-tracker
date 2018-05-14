@@ -1,0 +1,8 @@
+<h1>Editing Product</h1>
+
+<td><%= link_to Category.find(product.category_id).name, category_path(product.category_id) %></td>
+
+<%= render 'form', product: @product %>
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>

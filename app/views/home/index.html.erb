@@ -1,0 +1,54 @@
+<h1>Hey, this is the user's homepage!</h1>
+<% if user_signed_in? %>
+	<div>Hello, <%= current_user.email %></div>
+	<div id="accordion">
+
+	  <div class="card">
+		<div class="card-header" id="headingTwo">
+			<h5 class="mb-0">
+				<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				January
+				</button>
+			</h5>
+		</div>
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+			<div class="card-body">
+				<form>
+					<div class="form-row">
+						<div class="col-md-8">
+							<input type="text" class="form-control" placeholder="Add new item">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	  </div>
+
+	  <div class="card">
+	    <div class="card-header" id="headingThree">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          February
+	        </button>
+	      </h5>
+	    </div>
+	    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+	    	<form>
+	    		<div class="form-row">
+	    			<div class="col-md-8">
+	    				<input type="text" class="form-control" placeholder="Add new item">
+	    			</div>
+	    		</div>
+	    	</form>
+	    </div>
+	  </div>
+	</div>
+
+	<li>
+		<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+	</li>
+		<% else %>
+	<li>
+		<%= link_to('Login', new_user_session_path)  %>  
+	</li>
+<% end %>

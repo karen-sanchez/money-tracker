@@ -1,7 +1,10 @@
 class CategoriesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
+    @categories = Category.all
     @categories_by_user = current_user.categories
     @category= @categories_by_user.all.includes(:products)
     @products = Product.where(:user_id => current_user)
@@ -23,14 +26,10 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @user = current_user
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if @category.save
+      render json: @category
+    else
+      render json: @category.errors, status: :unprocessable_entity
     end
   end
 

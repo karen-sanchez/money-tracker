@@ -8,16 +8,17 @@ var Category = React.createClass({
 		console.log('you are in edit!');
 		if (this.state.editable) {
 			var name = this.state.name;
-			// this.onUpdate();
+			this.onUpdate();
 		}
 		this.setState({ editable: !this.state.editable })
 	},
 
 	onUpdate() {
 	  if (this.state.editable) {
-	    var name    = this.state.name;
+	  	var id = this.props.category.id;
+	    var name  = this.state.name;
 
-	    var category = { name: name }
+	    var category = { id: id, name: name }
 
 	    this.props.handleUpdate(category);
 	  }

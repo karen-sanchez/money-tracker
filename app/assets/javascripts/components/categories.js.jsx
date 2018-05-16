@@ -4,10 +4,6 @@ var Categories = React.createClass({
 		this.props.handleDelete(id);
 	},
 
-	// handleEdit() {
-	//   console.log('you are in edit!');
-	// },
-
 	onUpdate(category) {
 	  this.props.handleUpdate(category);
 	},

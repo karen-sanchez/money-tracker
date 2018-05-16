@@ -31,19 +31,22 @@ var Main = React.createClass({
 	},
 
 	handleUpdate(category) {
-		console.log(category, 'in handleUpdate');
-		// $.ajax({
-		// 	url: `/categories/${category.id}`,
-		// 	type: 'PUT',
-		// 	data: { category: category },
-		// 	success: () => {
-		// 		console.log(category)
-		// 		this.updateCategories(category);
-		// 		//callback to swap objects
-		// 	}
-		// });
+		$.ajax({
+			url: `/categories/${category.id}`,
+			type: 'PUT',
+			data: { category: category },
+			success: () => {
+				this.updateCategories(category);
+			}
+		});
 	},
 
+	updateCategories(category) {
+	  var categories = this.state.categories.filter((s) => { return s.id != category.id });
+	  categories.push(category);
+
+	  this.setState({ categories: categories });
+	},
 
 	render() {
 		return (

@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
     @categories_by_user = current_user.categories
     @category= @categories_by_user.all.includes(:products)
     @products = Product.where(:user_id => current_user)
+    @users = User.all
   end
 
   def show

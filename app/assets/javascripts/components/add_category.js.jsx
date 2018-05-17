@@ -15,7 +15,7 @@ var NewCategoryForm = React.createClass({
 	render() {
 		return (
 			<div>
-				<input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of new category' />
+				<input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter new category' />
 				<button onClick={this.handleClick}>Submit</button>
 			</div>
 		)

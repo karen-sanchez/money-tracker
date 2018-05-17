@@ -5,7 +5,6 @@ var Category = React.createClass({
 	},
 
 	handleEdit() {
-		console.log('you are in edit!');
 		if (this.state.editable) {
 			var name = this.state.name;
 			this.onUpdate();

@@ -21,7 +21,7 @@ var Categories = React.createClass({
 
 		return (
 			<div>
-				<h3>Here is a list of all categories</h3>
+				<h3>Here is a list of all your categories</h3>
 				{categories}
 			</div>
 		)

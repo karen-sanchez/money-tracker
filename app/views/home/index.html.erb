@@ -2,7 +2,6 @@
 <% if user_signed_in? %>
 	<div>Hello, <%= current_user.email %></div>
 	<p id="notice"><%= notice %></p>
-
 	<li>
 		<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
 	</li>

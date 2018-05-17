@@ -6,6 +6,7 @@ var Main = React.createClass({
 
 	componentDidMount() {
 		 $.getJSON('/categories.json', (response) => { this.setState({ categories: response }) });
+		 // $.getJSON('/products.json', (response) => { this.setState({ products: response }) });
 	},
 
 	handleSubmit(category) {
@@ -42,10 +43,10 @@ var Main = React.createClass({
 	},
 
 	updateCategories(category) {
-	  var categories = this.state.categories.filter((s) => { return s.id != category.id });
-	  categories.push(category);
+		var categories = this.state.categories.filter((s) => { return s.id != category.id });
+		categories.push(category);
 
-	  this.setState({ categories: categories });
+		this.setState({ categories: categories });
 	},
 
 	render() {

@@ -1,12 +1,11 @@
 var Main = React.createClass({
 
 	getInitialState() {
-		return { categories: [] };
+		return { categories: this.props.catdata, products: this.props.proddata };
 	},
 
-	componentDidMount() {
-		 $.getJSON('/categories.json', (response) => { this.setState({ categories: response }) });
-		 // $.getJSON('/products.json', (response) => { this.setState({ products: response }) });
+	getDefaultProps() {
+		return { categories: [], products: [] };
 	},
 
 	handleSubmit(category) {
@@ -54,6 +53,7 @@ var Main = React.createClass({
 			<div>
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
 				<Categories categories={this.state.categories} handleDelete={this.handleDelete}  handleUpdate={this.handleUpdate} />
+				<Products products={this.state.products} />
 			</div>
 		);
 	}

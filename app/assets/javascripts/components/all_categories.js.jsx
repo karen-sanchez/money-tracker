@@ -5,7 +5,7 @@ var Categories = React.createClass({
 	},
 
 	onUpdate(category) {
-	  this.props.handleUpdate(category);
+		this.props.handleUpdate(category);
 	},
 
 	render() {

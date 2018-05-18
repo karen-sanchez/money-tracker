@@ -4,11 +4,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    # @categories = Category.all
     @categories_by_user = current_user.categories
     @category= @categories_by_user.all.includes(:products)
     @products = Product.where(:user_id => current_user)
     @users = User.all
+    @user = current_user
   end
 
   def show

@@ -1,7 +1,7 @@
 var Main = React.createClass({
 
 	getInitialState() {
-		return { categories: this.props.catdata, products: this.props.proddata };
+		return { categories: this.props.catdata, products: this.props.itemsdata };
 	},
 
 	getDefaultProps() {
@@ -11,6 +11,11 @@ var Main = React.createClass({
 	handleSubmit(category) {
 		let newState = this.state.categories.concat(category);
 		this.setState({ categories: newState })
+	},
+
+	handleSubmitProduct(product) {
+		let newProductState = this.state.products.concat(product);
+		this.setState({ products: newProductState })
 	},
 
 	handleDelete(id) {
@@ -54,6 +59,7 @@ var Main = React.createClass({
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
 				<Categories categories={this.state.categories} handleDelete={this.handleDelete}  handleUpdate={this.handleUpdate} />
 				<Products products={this.state.products} />
+				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} />
 			</div>
 		);
 	}

@@ -3,12 +3,12 @@ var NewCategoryForm = React.createClass({
 	handleClick() {
 		var name = this.state.name;
 		$.ajax({
-		  url: '/categories',
-		  type: 'POST',
-		  data: { category: { name: name } },
-		  success: (category) => {
-		    this.props.handleSubmit(category);
-		  }
+			url: '/categories',
+			type: 'POST',
+			data: { category: { name: name } },
+			success: (category) => {
+				this.props.handleSubmit(category);
+			}
 		});
 	},
 
@@ -20,4 +20,4 @@ var NewCategoryForm = React.createClass({
 			</div>
 		)
 	}
-})
+});

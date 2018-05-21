@@ -1,13 +1,5 @@
 var Products = React.createClass({
 
-	// getInitialState() {
-	// 	return { products: this.props.proddata };
-	// },
-
-	// getDefaultProps() {
-	// 	return { products: [] };
-	// },
-
 	render() {
 		var products = this.props.products.map(function (product) {
 			return (
@@ -18,7 +10,7 @@ var Products = React.createClass({
 		});
 		return (
 			<div>
-				<h3>Here is a list of all your products</h3>
+				<h3>Here is a list of all your items</h3>
 				{products}
 			</div>
 		);

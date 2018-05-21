@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,39 +12,31 @@ class ProductsController < ApplicationController
     @categories = Category.where(:user_id => current_user).map{ |c| [c.name, c.id]}
   end
 
-  # GET /products/1
-  # GET /products/1.json
   def show
   end
 
-  # GET /products/1/edit
   def edit
     @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def create
     @product = Product.new(product_params)
-    @product.category_id = params[:category_id] 
+    # @product.category_id = params[:category_id] 
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      render json: @product
+    else
+      render json: @product.errors, status: :unprocessable_entity
     end
+
   end
 
   def update
     @product.category_id = params[:category_id]
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +45,6 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +57,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price).merge(user: current_user)
+      params.require(:product).permit(:name, :price, :category_id).merge(user: current_user)
     end
 end

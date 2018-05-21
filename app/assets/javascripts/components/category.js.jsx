@@ -25,10 +25,17 @@ var Category = React.createClass({
 	},
 
 	render() {
-		var name = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <p>{this.props.category.name}</p>
+		var name = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <h5>{this.props.category.name}</h5>;
+		var cat = this.props.category.id;
+		var styles = {
+			width: '16rem',
+			border: '1px solid grey'
+		};
+
 		return (
-			<div>
+			<div className="card" style={styles}>
 				{name}
+				<p>Cat_id: {cat}</p>
 				<button type="button" className="btn btn-sm btn-primary" onClick={this.props.handleDelete}> Delete </button>
 				<button type="button" className="btn btn-sm btn-secondary" onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit'}</button>
 			</div>

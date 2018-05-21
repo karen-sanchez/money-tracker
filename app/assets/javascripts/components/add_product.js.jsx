@@ -7,7 +7,7 @@ var NewProductForm = React.createClass({
 		$.ajax({
 			url: '/products',
 			type: 'POST',
-			data: { product: { name: name, price: price, category_id: 84, user_id: 1 } },
+			data: { product: { name: name, price: price, category_id: 84 } },
 			success: (product) => {
 				this.props.handleSubmitProduct(product);
 			}

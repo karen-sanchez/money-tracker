@@ -16,12 +16,11 @@ var Categories = React.createClass({
 					handleDelete={this.handleDelete.bind(this, category.id)} 
 					handleUpdate={this.onUpdate}  />
 				</div>
-			)
+			);
 		});
 
 		return (
-			<div>
-				<h3>Here is a list of all your categories</h3>
+			<div className="row">
 				{categories}
 			</div>
 		)

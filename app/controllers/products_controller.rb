@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.category_id = params[:category_id]
+    # @product.category_id = params[:category_id]
     respond_to do |format|
       if @product.update(product_params)
         format.json { render :show, status: :ok, location: @product }

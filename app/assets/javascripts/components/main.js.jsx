@@ -28,11 +28,28 @@ var Main = React.createClass({
 		});
 	},
 
+	handleProductDelete(id) {
+		$.ajax({
+			url: `/products/${id}`,
+			type: 'DELETE',
+			success: () => {
+				this.removeProductFromDOM(id);
+			}
+		});
+	},
+
 	removeCategoryFromDOM(id) {
 		let newCategories = this.state.categories.filter((category) => {
 			return category.id != id;
 		});
 		this.setState({ categories: newCategories });
+	},
+
+	removeProductFromDOM(id) {
+		let newProducts = this.state.products.filter((product) => {
+			return product.id != id;
+		});
+		this.setState({ products: newProducts });
 	},
 
 	handleUpdate(category) {
@@ -46,6 +63,17 @@ var Main = React.createClass({
 		});
 	},
 
+	handleProductUpdate(product) {
+		$.ajax({
+			url: `/products/${product.id}`,
+			type: 'PUT',
+			data: { product: product },
+			success: () => {
+				this.updateProducts(product);
+			}
+		});
+	},
+
 	updateCategories(category) {
 		var categories = this.state.categories.filter((s) => { return s.id != category.id });
 		categories.push(category);
@@ -53,12 +81,21 @@ var Main = React.createClass({
 		this.setState({ categories: categories });
 	},
 
+	updateProducts(product) {
+		var products = this.state.products.filter((s) => { return s.id != product.id });
+		products.push(product);
+
+		this.setState({ products: products });
+	},
+
 	render() {
 		return (
-			<div>
+			<div className='container'>
+				<h3>Here is a list of all your categories</h3>
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
 				<Categories categories={this.state.categories} handleDelete={this.handleDelete}  handleUpdate={this.handleUpdate} />
-				<Products products={this.state.products} />
+				<h3>Here is a list of all your items</h3>
+				<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
 				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} />
 			</div>
 		);

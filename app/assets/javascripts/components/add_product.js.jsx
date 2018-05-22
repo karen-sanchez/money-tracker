@@ -1,7 +1,7 @@
 var NewProductForm = React.createClass({
 
 	handleClick() {
-		var name = this.state.name,
+		let name = this.state.name,
 			price = this.state.price,
 			catId = this.state.catId;
 

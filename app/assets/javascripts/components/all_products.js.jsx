@@ -9,7 +9,7 @@ var Products = React.createClass({
 	},
 
 	render() {
-		var products = this.props.products.map((product) => {
+		let products = this.props.products.map((product) => {
 			return (
 				<div key={product.id}>
 					<Product id={product.id} name={product.name} price={product.price} categoryid={product.category_id} userid={product.user_id} handleProductDelete={this.handleProductDelete.bind(this, product.id)} handleUpdate={this.onUpdate} />

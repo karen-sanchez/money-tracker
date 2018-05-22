@@ -6,7 +6,7 @@ var Category = React.createClass({
 
 	handleEdit() {
 		if (this.state.editable) {
-			var name = this.state.name;
+			let name = this.state.name;
 			this.onUpdate();
 		}
 		this.setState({ editable: !this.state.editable })
@@ -14,10 +14,10 @@ var Category = React.createClass({
 
 	onUpdate() {
 		if (this.state.editable) {
-			var id = this.props.category.id;
-			var name  = this.state.name;
+			let id = this.props.category.id;
+			let name  = this.state.name;
 
-			var category = { id: id, name: name }
+			let category = { id: id, name: name }
 
 			this.props.handleUpdate(category);
 		}
@@ -25,8 +25,8 @@ var Category = React.createClass({
 	},
 
 	render() {
-		var name = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <h5>{this.props.category.name}</h5>;
-		var cat = this.props.category.id;
+		let name = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <h5>{this.props.category.name}</h5>;
+		let cat = this.props.category.id;
 
 		return (
 			<div className="col-12 pt-3 pb-3 card">

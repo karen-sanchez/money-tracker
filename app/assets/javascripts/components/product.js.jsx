@@ -6,9 +6,9 @@ var Product = React.createClass({
 
 	handleProductEdit() {
 		if (this.state.editable) {
-			var id = this.props.id;
-			var itemName = this.state.name;
-			var itemPrice = this.state.price;
+			let id = this.props.id;
+			let itemName = this.state.name;
+			let itemPrice = this.state.price;
 			this.onUpdate();
 		}
 		this.setState({ editable: !this.state.editable })
@@ -16,11 +16,11 @@ var Product = React.createClass({
 
 	onUpdate() {
 		if(this.state.editable) {
-			var id = this.props.id;
-			var itemName = this.state.name;
-			var itemPrice = this.state.price;
+			let id = this.props.id;
+			let itemName = this.state.name;
+			let itemPrice = this.state.price;
 
-			var product = { id: id, name: itemName, price: itemPrice }
+			let product = { id: id, name: itemName, price: itemPrice }
 
 			this.props.handleUpdate(product)
 		}
@@ -28,11 +28,11 @@ var Product = React.createClass({
 	},
 
 	render() {
-		var id = <p> id: {this.props.id} </p>;
-		var itemName = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <p>item name: {this.props.name}</p>;
-		var itemPrice = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <p> price: {this.props.price}</p>;
-		var itemCatId = <p defaultValue={this.props.categoryid}> cat_id: {this.props.categoryid} </p>;
-		var itemUserId = <p defaultValue={this.props.userid}> user_id: {this.props.userid}</p>;
+		let id = <p> id: {this.props.id} </p>;
+		let itemName = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <p>item name: {this.props.name}</p>;
+		let itemPrice = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <p> price: {this.props.price}</p>;
+		let itemCatId = <p defaultValue={this.props.categoryid}> cat_id: {this.props.categoryid} </p>;
+		let itemUserId = <p defaultValue={this.props.userid}> user_id: {this.props.userid}</p>;
 
 		return (
 			<div className="col-12 pt-1 pb-1 card">

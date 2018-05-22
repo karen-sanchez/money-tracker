@@ -9,7 +9,7 @@ var Categories = React.createClass({
 	},
 
 	render() {
-		var categories = this.props.categories.map((category) => {
+		let categories = this.props.categories.map((category) => {
 			return (
 				<div key={category.id}>
 					<Category category={category}

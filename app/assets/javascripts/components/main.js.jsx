@@ -75,14 +75,14 @@ var Main = React.createClass({
 	},
 
 	updateCategories(category) {
-		var categories = this.state.categories.filter((s) => { return s.id != category.id });
+		let categories = this.state.categories.filter((s) => { return s.id != category.id });
 		categories.push(category);
 
 		this.setState({ categories: categories });
 	},
 
 	updateProducts(product) {
-		var products = this.state.products.filter((s) => { return s.id != product.id });
+		let products = this.state.products.filter((s) => { return s.id != product.id });
 		products.push(product);
 
 		this.setState({ products: products });

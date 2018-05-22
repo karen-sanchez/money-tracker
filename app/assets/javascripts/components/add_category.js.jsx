@@ -1,7 +1,7 @@
 var NewCategoryForm = React.createClass({
 
 	handleClick() {
-		var name = this.state.name;
+		let name = this.state.name;
 		$.ajax({
 			url: '/categories',
 			type: 'POST',

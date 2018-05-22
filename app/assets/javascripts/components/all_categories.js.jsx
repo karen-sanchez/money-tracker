@@ -14,7 +14,7 @@ var Categories = React.createClass({
 				<div key={category.id}>
 					<Category category={category}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
-					handleUpdate={this.onUpdate}  />
+					handleUpdate={this.onUpdate} />
 				</div>
 			);
 		});

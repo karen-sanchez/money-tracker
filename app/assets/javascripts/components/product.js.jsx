@@ -35,7 +35,7 @@ var Product = React.createClass({
 		var itemUserId = <p defaultValue={this.props.userid}> user_id: {this.props.userid}</p>;
 
 		return (
-			<div className="col-10 pt-3 pb-3 card">
+			<div className="col-12 pt-1 pb-1 card">
 				<ul>
 					{id}
 					{itemName}

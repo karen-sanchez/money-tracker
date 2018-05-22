@@ -95,8 +95,8 @@ var Main = React.createClass({
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
 				<Categories categories={this.state.categories} handleDelete={this.handleDelete}  handleUpdate={this.handleUpdate} />
 				<h3>Here is a list of all your items</h3>
+				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
 				<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
-				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} />
 			</div>
 		);
 	}

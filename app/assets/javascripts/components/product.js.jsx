@@ -9,6 +9,7 @@ var Product = React.createClass({
 			let id = this.props.id;
 			let itemName = this.state.name;
 			let itemPrice = this.state.price;
+			let catId = this.props.categoryid;
 			this.onUpdate();
 		}
 		this.setState({ editable: !this.state.editable })
@@ -19,8 +20,9 @@ var Product = React.createClass({
 			let id = this.props.id;
 			let itemName = this.state.name;
 			let itemPrice = this.state.price;
+			let catId = this.props.categoryid;
 
-			let product = { id: id, name: itemName, price: itemPrice }
+			let product = { id: id, name: itemName, price: itemPrice, category_id: catId }
 
 			this.props.handleUpdate(product)
 		}
@@ -29,8 +31,8 @@ var Product = React.createClass({
 
 	render() {
 		let id = <p> id: {this.props.id} </p>;
-		let itemName = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <p>item name: {this.props.name}</p>;
-		let itemPrice = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <p> price: {this.props.price}</p>;
+		let itemName = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <p>item name: {this.props.name}</p>;
+		let itemPrice = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <p> price: {this.props.price}</p>;
 		let itemCatId = <p defaultValue={this.props.categoryid}> cat_id: {this.props.categoryid} </p>;
 		let itemUserId = <p defaultValue={this.props.userid}> user_id: {this.props.userid}</p>;
 

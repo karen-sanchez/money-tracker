@@ -70,6 +70,7 @@ var Main = React.createClass({
 			data: { product: product },
 			success: () => {
 				this.updateProducts(product);
+				console.log('success AJAX');
 			}
 		});
 	},
@@ -90,11 +91,11 @@ var Main = React.createClass({
 
 	render() {
 		return (
-			<div className='container'>
+			<div className="container">
 				<h3>Here is a list of all your categories</h3>
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
 				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
-				<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} />
+				<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} />
 				<h3>Here is a list of all your items</h3>
 				<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
 			</div>

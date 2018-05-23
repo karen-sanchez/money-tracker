@@ -23,8 +23,8 @@ var NewProductForm = React.createClass({
 
 		return (
 			<div>
-				<input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of item' />
-				<input onChange={ (e) => this.setState({ price: e.target.value }) } placeholder='Price' />
+				<input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter name of item" />
+				<input onChange={ (e) => this.setState({ price: e.target.value }) } placeholder="Price" />
 				<select onChange={ (e) => this.setState({ catId: e.target.value }) }>
 					{optionItems}
 				</select>

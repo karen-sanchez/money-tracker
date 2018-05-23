@@ -93,7 +93,7 @@ var Main = React.createClass({
 			<div className='container'>
 				<h3>Here is a list of all your categories</h3>
 				<NewCategoryForm handleSubmit={this.handleSubmit} />
-				<Categories categories={this.state.categories} handleDelete={this.handleDelete}  handleUpdate={this.handleUpdate} />
+				<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
 				<h3>Here is a list of all your items</h3>
 				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
 				<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />

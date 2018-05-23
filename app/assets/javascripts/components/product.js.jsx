@@ -41,7 +41,7 @@ var Product = React.createClass({
 					{itemName}
 					{itemPrice}
 					{itemCatId}
-					{itemUserId}
+					{/*{itemUserId}*/}
 					<button type="button" className="btn btn-sm btn-primary" onClick={this.props.handleProductDelete}> Delete </button>
 					<button type="button" className="btn btn-sm btn-secondary" onClick={this.handleProductEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button>
 				</ul>

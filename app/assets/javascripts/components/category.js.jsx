@@ -24,6 +24,10 @@ var Category = React.createClass({
 		this.setState({ editable: !this.state.editable })
 	},
 
+	handleProductDelete(id) {
+		this.props.passProductId(id);
+	},
+
 	render() {
 		let name = this.state.editable ? <input type='text' onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <h5>{this.props.category.name}</h5>;
 		let cat = this.props.category.id;
@@ -33,7 +37,7 @@ var Category = React.createClass({
 				return (
 					<div key={product.id}>
 						<div className="card">
-							<Product id={product.id} name={product.name} price={product.price} categoryid={product.category_id} userid={product.user_id} />
+							<Product id={product.id} name={product.name} price={product.price} categoryid={product.category_id} userid={product.user_id} handleProductDelete={this.handleProductDelete.bind(this, product.id)} />
 						</div>
 					</div>
 				);

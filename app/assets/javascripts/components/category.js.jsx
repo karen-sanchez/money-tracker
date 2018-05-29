@@ -43,7 +43,6 @@ var Category = React.createClass({
 						<div className="card">
 							<Product id={product.id} name={product.name} price={product.price} categoryid={product.category_id} userid={product.user_id} handleProductDelete={this.handleProductDelete.bind(this, product.id)} handleUpdate={this.onUpdateProd} />
 						</div>
-						<AmountBox total={this.props.totalByCat(cat)} />
 					</div>
 				);
 			}

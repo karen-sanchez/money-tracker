@@ -23,6 +23,7 @@ var Categories = React.createClass({
 					<Category category={category}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
 					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} passProduct={this.passProduct} totalByCat={this.props.totalByCat} />
+					<AmountBox total={this.props.totalByCat(category.id)} />
 				</div>
 			);
 		});

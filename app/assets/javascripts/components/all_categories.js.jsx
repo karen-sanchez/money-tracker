@@ -12,7 +12,7 @@ var Categories = React.createClass({
 		this.props.handleProductDelete(id);
 	},
 
-	test(product) {
+	passProduct(product) {
 		this.props.handleProductUpdate(product);
 	},
 
@@ -22,7 +22,7 @@ var Categories = React.createClass({
 				<div key={category.id}>
 					<Category category={category}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
-					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} test={this.test} />
+					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} passProduct={this.passProduct} totalByCat={this.props.totalByCat} />
 				</div>
 			);
 		});

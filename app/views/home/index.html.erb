@@ -4,23 +4,28 @@
 
 	<tbody>
 		<% @categories_months.each do |month, categories| %>
+		<div class="iamparent">
 		<strong><%= month.strftime('%B, %Y') %></strong>
 			<tr>
 			<% for category in categories %>
-				<div>
 					<p><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></p>
-				</div>
+					<% category.products.each do |product| %>
+						<li> <%= product.name %> </li>
+						<li class="product-price"> <%= product.price %> </li>
+					<% end %>
 			<% end %>
-			</tr>    
-		<% end %>   
+			</tr>
+			<strong class="cats-total">Total: </strong>
+		</div>  
+		<% end %> 
 	</tbody>
 
 	<li>
-		<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+		<%= link_to("Logout", destroy_user_session_path, method: :delete) %>        
 	</li>
 <% else %>
 	<h3>Please sign in</h3>
 	<li>
-		<%= link_to('Login', new_user_session_path)  %>  
+		<%= link_to("Login", new_user_session_path)  %>  
 	</li>
 <% end %>

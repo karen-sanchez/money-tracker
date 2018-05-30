@@ -1,11 +1,20 @@
 var NewCategoryForm = React.createClass({
 
 	handleClick() {
+
+		let date = new Date();
+		let year = date.getFullYear().toString();
+		let month = (date.getMonth() + 1).toString();
+		let day = date.getDate().toString();
+		(day.length == 1) && (day = '0' + day);
+		(month.length == 1) && (month = '0' + month);
+		let dateFormat = year + '-' + month + '-' + day;
 		let name = this.state.name;
+
 		$.ajax({
 			url: '/categories',
 			type: 'POST',
-			data: { category: { name: name } },
+			data: { category: { name: name, category_create_date: dateFormat } },
 			success: (category) => {
 				this.props.handleSubmit(category);
 			}

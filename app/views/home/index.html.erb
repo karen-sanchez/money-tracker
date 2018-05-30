@@ -2,6 +2,21 @@
 <% if user_signed_in? %>
 	<div>Hello, <%= current_user.email %></div>
 	<p id="notice"><%= notice %></p>
+
+	<tbody>
+	    <% @categories_months.each do |month, categories| %>
+	      <%= month.strftime('%B') %>
+	    <tr>
+	      <% for category in categories %>
+	      <div>
+	          <strong> <%= category.name %> </strong>
+	          due on <%= category.due_date.to_date.to_s(:long) %>
+	      </div>
+	      <% end %>
+	     </tr>    
+	    <% end %>   
+	</tbody>
+
 	<li>
 		<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
 	</li>

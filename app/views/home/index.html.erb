@@ -4,8 +4,8 @@
 
 	<tbody>
 		<% @categories_months.each do |month, categories| %>
-		<div class="iamparent">
-		<strong><%= month.strftime('%B, %Y') %></strong>
+		<div class="parent-date">
+			<strong><%= month.strftime('%B, %Y') %></strong>
 			<tr>
 			<% for category in categories %>
 					<p><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></p>
@@ -15,7 +15,7 @@
 					<% end %>
 			<% end %>
 			</tr>
-			<strong class="cats-total">Total: </strong>
+			<strong class="categories-total">Total: </strong>
 		</div>  
 		<% end %> 
 	</tbody>

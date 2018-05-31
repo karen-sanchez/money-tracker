@@ -1,18 +1,17 @@
 $(document).ready(function() {
 
-	$('.iamparent').each(function() {
-		let pp = $(this).find('.product-price').text();
-		let someArray = [];
-		
-		someArray.push(pp)
+	function getSum(total, num) {
+	    return total + num;
+	}
 
-		// parse this crap
-
-		var total = 0;
-		for (var i = 0; i < someArray.length; i++) {
-			total += someArray[i] << 0;
-		}
-		console.log(someArray, total)
-  	});
+	$('.parent-date').each(function() {		
+		let pricesArray = [];
+		let findPrice = $(this).find('.product-price').text();
+		pricesArray.push(findPrice)
+		let parseArray = pricesArray.join(' ').split(' ').map(parseFloat);
+		let filterArray = parseArray.filter(Boolean);
+		let total = filterArray.reduce(getSum);
+		$(this).find('.categories-total').text('GRAND TOTAL: $ ' + ' ' + total);
+	});
 
 });

@@ -2,13 +2,10 @@ var AmountBox = React.createClass({
 
 	render() {
 		return (
-			<div className="col-md-4">
+			<div className="col-12">
 				<div className="card text-white bg-success mb-3">
-					<div className="card-header">
-						<p>Total</p>
-					</div>
 					<div className="card-body">
-						{this.props.total}
+						<p>Total: ${this.props.total}</p> 
 					</div>
 				</div>
 			</div>

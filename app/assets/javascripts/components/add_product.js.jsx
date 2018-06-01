@@ -23,12 +23,14 @@ var NewProductForm = React.createClass({
 
 		return (
 			<div>
-				<input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter name of item" />
-				<input onChange={ (e) => this.setState({ price: e.target.value }) } placeholder="Price" />
-				<select onChange={ (e) => this.setState({ catId: e.target.value }) }>
+			<form className="form-inline">
+				<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter name of item" />
+				<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ price: e.target.value }) } placeholder="Price" />
+				<select className="custom-select custom-select-sm mr-sm-2" onChange={ (e) => this.setState({ catId: e.target.value }) }>
 					{optionItems}
 				</select>
 				<button type="button" className="btn btn-sm btn-success" onClick={this.handleClick}>Submit</button>
+			</form>
 			</div>
 		)
 	}

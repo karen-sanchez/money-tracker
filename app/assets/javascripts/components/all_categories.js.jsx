@@ -20,10 +20,9 @@ var Categories = React.createClass({
 		let categories = this.props.categories.map((category) => {
 			return (
 				<div key={category.id}>
-					<Category category={category}
+					<Category category={category} total={this.props.totalByCat(category.id)}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
 					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} passProduct={this.passProduct} totalByCat={this.props.totalByCat} />
-					<AmountBox total={this.props.totalByCat(category.id)} />
 				</div>
 			);
 		});

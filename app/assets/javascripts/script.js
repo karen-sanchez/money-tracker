@@ -14,23 +14,23 @@ $(document).ready(function() {
 		$(this).find('.categories-total').text('Total: $ ' + ' ' + total);
 	});
 	// create unique attr names for collapse table to work
-	$('.card-header').each(function(i) {
+	$('#accordion .card-header').each(function(i) {
 		$(this).attr('id', 'heading' + i)
 	});
 
-	$('.collapse').each(function(i) {
+	$('#accordion  .collapse').each(function(i) {
 		$(this).attr('aria-labelledby', 'heading' + i)
 	});
 
-	$('.btn-link').each(function(i) {
+	$('#accordion  .btn-link').each(function(i) {
 		$(this).attr('data-target', '#collapse' + i)
 	});
 
-	$('.btn-link').each(function(i) {
+	$('#accordion  .btn-link').each(function(i) {
 		$(this).attr('aria-controls', 'collapse' + i)
 	});
 
-	$('.collapse').each(function(i) {
+	$('#accordion  .collapse').each(function(i) {
 		$(this).attr('id', 'collapse' + i)
 	});
 
@@ -43,5 +43,6 @@ $(document).ready(function() {
 	  		$(this).parent().parent().next().toggleClass('show');
 		});
 	});
+
 
 });

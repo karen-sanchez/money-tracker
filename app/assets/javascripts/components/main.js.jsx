@@ -110,14 +110,17 @@ var Main = React.createClass({
 
 	render() {
 		return (
-			<div className="container">
-				<h3>Here is a list of all your categories</h3>
-				<NewCategoryForm handleSubmit={this.handleSubmit} />
-				<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
-				<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat}/>
-				<h3>Here is a list of all your items</h3>
-				<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
-				<AmountBox total={this.total()} />
+			<div>
+				<Navbar />
+				<div className="container">
+					<h3>Here is a list of all your categories</h3>
+					<NewCategoryForm handleSubmit={this.handleSubmit} />
+					<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
+					<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat}/>
+					<h3>Here is a list of all your items</h3>
+					<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
+					<AmountBox total={this.total()} />
+				</div>
 			</div>
 		);
 	}

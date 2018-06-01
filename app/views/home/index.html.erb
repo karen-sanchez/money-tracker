@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
-	<div>Hello, <%= current_user.username %></div>
-	<p id="notice"><%= notice %></p>
-	<li>
-		<%= link_to("Logout", destroy_user_session_path, method: :delete) %>        
-	</li>
-
+<%= render 'partials/nav' %>
+	<div class="jumbotron">
+		<h1 class="col-6 text-center mx-auto">Hello, <%= current_user.username %></h1>
+	</div>
+<!-- 	<p id="notice"><%#= notice %></p> -->
 	<div class="col-6 mx-auto">
 		<div id="accordion">
 			<% @categories_months.each do |month, categories| %>

@@ -111,18 +111,22 @@ var Main = React.createClass({
 	render() {
 		return (
 			<div>
-				<Navbar />
-				<div className="container-fluid">
-					<NewCategoryForm handleSubmit={this.handleSubmit} />
-					<br />
-					<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
-					<h3>Categories with products to buy</h3>
-					<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
-					<h3>Here is a list of all your items</h3>
-					<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
-					<div className="row">
-						<div className="col-3 mx-auto">
-							<AmountBox total={this.total()} />
+				<div className="container-fluid h-100">
+					<div className="row h-100">
+						<Navbar />
+						<div className="col">
+							<NewCategoryForm handleSubmit={this.handleSubmit} />
+							<br />
+							<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
+							<h3>Categories with products to buy</h3>
+							<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
+							{/*<h3>Here is a list of all your items</h3>*/}
+							{/*<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />*/}
+							<div className="row">
+								<div className="col-3 mx-auto">
+									<AmountBox total={this.total()} />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -29,7 +29,9 @@ var Categories = React.createClass({
 
 		return (
 			<div className="row">
-				{categories}
+				<div className="mx-auto">
+					{categories}
+				</div>
 			</div>
 		)
 	}

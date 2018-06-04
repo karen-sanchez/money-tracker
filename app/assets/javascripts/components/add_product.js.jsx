@@ -29,7 +29,7 @@ var NewProductForm = React.createClass({
 				<select className="custom-select custom-select-sm mr-sm-2" onChange={ (e) => this.setState({ catId: e.target.value }) }>
 					{optionItems}
 				</select>
-				<button type="button" className="btn btn-sm btn-success" onClick={this.handleClick}>Submit</button>
+				<button type="button" className="btn btn-md btn-success btn-block" onClick={this.handleClick}>Submit</button>
 			</form>
 			</div>
 		)

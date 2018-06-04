@@ -35,6 +35,8 @@ var Category = React.createClass({
 	render() {
 		let name = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.category.name} /> : <h5 className="d-inline p-2">{this.props.category.name}</h5>;
 		let cat = this.props.category.id;
+		let edit = <i className="fas fa-pencil-alt"></i>;
+		let submit = <i className="fas fa-check"></i>;
 
 		let products = this.props.products.map((product) => {
 			if ( product.category_id === cat ) {
@@ -53,8 +55,8 @@ var Category = React.createClass({
 				<div className="list-group-item">
 					<div className="text-center">
 						{name}
-						<button type="button" className="btn btn-danger d-inline p-2" onClick={this.props.handleDelete}> Delete </button>
-						<button type="button" className="btn btn-info d-inline p-2" onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit' }</button>
+						<button type="button" className="btn btn-danger d-inline p-2" onClick={this.props.handleDelete}> <i className="fas fa-times"></i></button>
+						<button type="button" className="btn btn-info d-inline p-2" onClick={this.handleEdit}> {this.state.editable ? submit : edit }</button>
 					</div>
 					{products}
 					<br /><AmountBox total={this.props.totalByCat(cat)} />

@@ -1,38 +1,44 @@
 <% if user_signed_in? %>
-<%= render 'partials/nav' %>
-	<div class="jumbotron">
-		<h1 class="col-6 text-center mx-auto">Hello, <%= current_user.username %></h1>
-	</div>
-<!-- 	<p id="notice"><%#= notice %></p> -->
-	<div class="col-6 mx-auto">
-		<div id="accordion">
-			<% @categories_months.each do |month, categories| %>
-			<div class="card parent-date">
+<div class="container-fluid h-100">
+    <div class="row h-100">
+		<%= render 'partials/nav' %>
+		<div class="col">
+			<div class="col-12">
+				<h1 class="col-6 text-center mx-auto mt-5 mb-5">Hello, <%= current_user.username %></h1>
+			</div>
+	<!-- 	<p id="notice"><%#= notice %></p> -->
+			<div class="col-xs-12 col-md-6 mx-auto">
+				<div id="accordion">
+					<% @categories_months.each do |month, categories| %>
+					<div class="card parent-date">
 
-				<div class="card-header" id="headingOne">
-					<h5 class="mb-0">
-						<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						<strong><%= month.strftime('%B, %Y') %></strong>
-						</button>
-					</h5>
-				</div>
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<strong><%= month.strftime('%B, %Y') %></strong>
+								</button>
+							</h5>
+						</div>
 
-				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-					<div class="card-body">
-						<% for category in categories %>
-								<strong><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></strong>
-								<% category.products.each do |product| %>
-									<li> <%= product.name %> </li>
-									<li class="product-price"> <%= product.price %> </li>
+						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+							<div class="card-body">
+								<% for category in categories %>
+										<strong><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></strong>
+										<% category.products.each do |product| %>
+											<li> <%= product.name %> </li>
+											<li class="product-price"> <%= product.price %> </li>
+										<% end %>
 								<% end %>
-						<% end %>
-						<strong class="categories-total">Total: </strong>
-					</div>
+								<strong class="categories-total">Total: </strong>
+							</div>
+						</div>
+					</div>  
+					<% end %> 
 				</div>
-			</div>  
-			<% end %> 
+			</div>
 		</div>
 	</div>
+</div>
 <% else %>
 	<h3>Please sign in</h3>
 	<li>

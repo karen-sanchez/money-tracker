@@ -2,3 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 a:hover{ background-color: grey ! important; }
+
+body, html {
+    height: 0%;
+    background-color: #e9ecef !important;
+}
+.bg-dark {
+	max-width: 100% !important;
+}
+li.nav-item {
+    padding-bottom: 0em;
+}
+
+
+@media (min-width: 768px) { 
+	body, html {
+	    height: 100%;
+	}
+	.bg-dark {
+		max-width: 5em !important;
+	}
+
+	li.nav-item {
+	    padding-bottom: 4em;
+	}
+	.btn-block {
+	  width: 30% !important;
+	}
+}
+
+
+

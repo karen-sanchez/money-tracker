@@ -43,6 +43,6 @@ $(document).ready(function() {
 	  		$(this).parent().parent().next().toggleClass('show');
 		});
 	});
-
+	
 
 });

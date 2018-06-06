@@ -19,7 +19,7 @@ var Products = React.createClass({
 			);
 		});
 		return (
-			<div className="row">
+			<div className="col-sm-12 col-md-6">
 				{products}
 			</div>
 		);

@@ -10,9 +10,11 @@ $(document).ready(function() {
 		pricesArray.push(findPrice)
 		let parseArray = pricesArray.join(' ').split(' ').map(parseFloat);
 		let filterArray = parseArray.filter(Boolean);
-		let total = filterArray.reduce(getSum);
+		let total = filterArray.reduce(getSum, 0);
 		$(this).find('.categories-total').text('Total: $ ' + ' ' + total);
 	});
+
+
 	// create unique attr names for collapse table to work
 	$('#accordion .card-header').each(function(i) {
 		$(this).attr('id', 'heading' + i)

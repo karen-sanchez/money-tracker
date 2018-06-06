@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'react-rails', '~> 1.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

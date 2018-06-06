@@ -19,7 +19,7 @@ var Categories = React.createClass({
 	render() {
 		let categories = this.props.categories.map((category) => {
 			return (
-				<div key={category.id}>
+				<div key={category.id} className="card mb-3">
 					<Category category={category} total={this.props.totalByCat(category.id)}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
 					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} passProduct={this.passProduct} totalByCat={this.props.totalByCat} />
@@ -28,10 +28,8 @@ var Categories = React.createClass({
 		});
 
 		return (
-			<div className="row">
-				<div className="mx-auto">
-					{categories}
-				</div>
+			<div className="card-deck accordion" id="accordion">
+				{categories}
 			</div>
 		)
 	}

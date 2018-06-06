@@ -12,7 +12,7 @@
 					<% @categories_months.each do |month, categories| %>
 					<div class="card parent-date">
 
-						<div class="card-header" id="headingOne">
+						<div class="card-header bg-info" id="headingOne">
 							<h5 class="mb-0">
 								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 								<strong><%= month.strftime('%B, %Y') %></strong>
@@ -21,15 +21,17 @@
 						</div>
 
 						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-							<div class="card-body">
+							<div class="container">
 								<% for category in categories %>
-										<strong><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></strong>
+									<div class="card mt-3">
+										<div class="card-header"><strong><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></strong></div>
 										<% category.products.each do |product| %>
-											<li> <%= product.name %> </li>
-											<li class="product-price"> <%= product.price %> </li>
+											<li class="list-group-item"> <%= product.name %></li>
+											<li class="product-price list-group-item"><%= product.price %></li>
 										<% end %>
+									</div>
 								<% end %>
-								<strong class="categories-total">Total: </strong>
+								<li class="categories-total list-group-item bg-warning"><strong>Total: </strong></li>
 							</div>
 						</div>
 					</div>  

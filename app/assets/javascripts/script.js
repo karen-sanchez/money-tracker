@@ -18,31 +18,23 @@ $(document).ready(function() {
 		$(this).attr('id', 'heading' + i)
 	});
 
-	$('#accordion  .collapse').each(function(i) {
-		$(this).attr('aria-labelledby', 'heading' + i)
+	$('#accordion .btn-link').each(function(i) {
+		$(this).attr('data-target', '#collapse' + i);
+		$(this).attr('aria-controls', 'collapse' + i);
 	});
 
-	$('#accordion  .btn-link').each(function(i) {
-		$(this).attr('data-target', '#collapse' + i)
+	$('#accordion .collapse').each(function(i) {
+		$(this).attr('id', 'collapse' + i);
+		$(this).attr('aria-labelledby', 'heading' + i);
 	});
 
-	$('#accordion  .btn-link').each(function(i) {
-		$(this).attr('aria-controls', 'collapse' + i)
-	});
+	// $('#accordion .card').on('show.bs.collapse', function () {
+	// 	$('.card').not(this).each(function(){
+	// 	    $(this).attr('class', 'card-holder');
+	// 	});
+	// 	$(this).attr('class', 'card');
+	// })
 
-	$('#accordion  .collapse').each(function(i) {
-		$(this).attr('id', 'collapse' + i)
-	});
-
-	$('#accordion').on('show hide', function() {
-	    $(this).css('height', 'auto');
-	});
-	// fixes accordion not closing last card
-	$('[id^=collapse]').each(function() {
-		$(this).parent().find('.btn-link').click(function() {
-	  		$(this).parent().parent().next().toggleClass('show');
-		});
-	});
-	
 
 });
+

@@ -31,24 +31,26 @@ var Product = React.createClass({
 
 	render() {
 		let id = <p> id: {this.props.id} </p>;
-		let itemName = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <p><strong>Item name:</strong> {this.props.name}</p>;
-		let itemPrice = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <p><strong>Price:</strong> {this.props.price}</p>;
+		let itemName = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ name: e.target.value }) } defaultValue={this.props.name} /> : <span>{this.props.name}</span>;
+		let itemPrice = this.state.editable ? <input type="text" onChange={ (e) => this.setState({ price: e.target.value }) } defaultValue={this.props.price} /> : <span>{this.props.price}</span>;
 		let itemCatId = <p defaultValue={this.props.categoryid}> cat_id: {this.props.categoryid} </p>;
 		let itemUserId = <p defaultValue={this.props.userid}> user_id: {this.props.userid}</p>;
+		let edit = <i className="fas fa-pencil-alt"></i>;
+		let submit = <i className="fas fa-check"></i>;
 
 		return (
-			<div className="col-12 pt-1 pb-1">
-				<ul className="list-group">
-					<div className="list-group-item">
-						<div className="float-left">
-							<div>{itemName}{itemPrice}</div>
+			<div className="list-group">
+				<div className="list-group-item">
+					<div className="row p-2">
+						<div className="col-8">
+							<strong>Item: </strong>{itemName} | 	<strong>Price: </strong>${itemPrice}
 						</div>
-						<div className="float-right">
-							<button type="button" className="btn btn-outline-danger" onClick={this.props.handleProductDelete}>X</button>
-							<button type="button" className="btn btn-outline-info" onClick={this.handleProductEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+						<div className="col-4">
+							<button type="button" className="close" onClick={this.handleProductEdit}> {this.state.editable ? submit : edit }</button>
+							<button type="button" className="close" onClick={this.props.handleProductDelete}><i className="fas fa-times"></i></button>
 						</div>
 					</div>
-				</ul>
+				</div>
 			</div>
 		);
 	}

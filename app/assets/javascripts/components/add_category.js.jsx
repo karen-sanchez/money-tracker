@@ -23,9 +23,15 @@ var NewCategoryForm = React.createClass({
 
 	render() {
 		return (
-			<form className="form-inline mt-3">
-				<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter new category" />
-				<button type="button" className="btn btn-md btn-success btn-block" onClick={this.handleClick}>Submit</button>
+			<form className="mb-3 mt-3">
+				<div className="form-row">
+					<div className="form-group col-md-6">
+						<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter new category" />
+					</div>
+					<div className="form-group col-md-6">
+						<button type="button" className="btn btn-md btn-success btn-block" onClick={this.handleClick}>Submit</button>
+					</div>
+				</div>
 			</form>
 		)
 	}

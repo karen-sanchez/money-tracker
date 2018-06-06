@@ -1,8 +1,4 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 a:hover{ background-color: grey ! important; }
-
 body, html {
     height: 0%;
     background-color: #e9ecef !important;
@@ -13,7 +9,59 @@ body, html {
 li.nav-item {
     padding-bottom: 0em;
 }
+.main .list-group-item {
+	padding: 0 !important;
+}
+.main .form-inline {
+	width: 100%;
+}
+.main .card-header {
+	height: 3em;
+}
+.main .card-deck .card {
+    min-width: 220px;
+}
+.main .card-body {
+	padding: 0.5rem !important;
+}
+.main .panel-title a:after {
+    font-family:FontAwesome;
+    content:'\f078';
+    float:right;
+    font-size:10px;
+    font-weight:300;
+}
+.main .panel-title a.collapsed:after {
+    font-family:FontAwesome;
+    content:'\f077';
+}
+.main .header{
+	padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    height: 3em;
+}
+// .card-holder {
+// 	position: relative;
+// 	display: -ms-flexbox;
+// 	display: flex;
+// 	-ms-flex-direction: column;
+// 	flex-direction: column;
+// 	min-width: 0;
+// 	word-wrap: break-word;
+// 	background-color: none;
+// 	background-clip: border-box;
+// 	border: none;
+// 	border-radius: .25rem;
+// }
 
+@media (min-width: 576px) {
+	.main .card-deck {
+	    display: flex !important;
+	    flex-direction: column !important;
+	}
+}
 
 @media (min-width: 768px) { 
 	body, html {
@@ -26,10 +74,29 @@ li.nav-item {
 	li.nav-item {
 	    padding-bottom: 4em;
 	}
-	.btn-block {
+	.main .btn-block {
 	  width: 30% !important;
+	}
+	.main .container {
+	    max-width: 650px !important;
+	}
+	.main aside {
+		height: 100vh;
+	}
+	.main .card-deck {
+	    flex-direction: row !important;
 	}
 }
 
+@media (min-width: 900px) {
+	.main .container {
+	    max-width: 800px !important;
+	}
+}
 
+@media (min-width: 1000px) {
+	.main .container {
+	    max-width: 900px !important;
+	}
+}
 

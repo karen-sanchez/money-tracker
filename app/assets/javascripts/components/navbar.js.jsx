@@ -7,7 +7,7 @@ var Navbar = React.createClass({
 					<div className="collapse navbar-collapse">
 						<ul className="flex-md-column flex-row navbar-nav w-100 justify-content-between">
 							<li className="nav-item">
-								<a className="navbar-brand" href="#"><i className="fab fa-3x fa-medium"></i></a>
+								<a className="nav-link" href="#"><i className="fab fa-3x fa-medium"></i></a>
 							</li>
 							<li className="nav-item">
 								<a className="nav-link" href="/"><i className="fas fa-3x fa-home"></i></a>

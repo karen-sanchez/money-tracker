@@ -22,16 +22,26 @@ var NewProductForm = React.createClass({
 		);
 
 		return (
-			<div>
-			<form className="form-inline">
-				<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter name of item" />
-				<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ price: e.target.value }) } placeholder="Price" />
-				<select className="custom-select custom-select-sm mr-sm-2" onChange={ (e) => this.setState({ catId: e.target.value }) }>
-					{optionItems}
-				</select>
-				<button type="button" className="btn btn-md btn-success btn-block" onClick={this.handleClick}>Submit</button>
+			<form className="mb-3">
+				<div className="form-row">
+					<div className="form-group col-md-6">
+						<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter name of item" />
+					</div>
+					<div className="form-group col-md-6">
+						<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ price: e.target.value }) } placeholder="Price" />
+					</div>
+				</div>
+				<div className="form-row">
+					<div className="form-group col-md-6">
+						<select className="custom-select custom-select-md mr-sm-2" onChange={ (e) => this.setState({ catId: e.target.value }) }>
+							{optionItems}
+						</select>
+					</div>
+					<div className="form-group col-md-6">
+						<button type="button" className="btn btn-md btn-success btn-block" onClick={this.handleClick}>Submit</button>
+					</div>
+				</div>
 			</form>
-			</div>
 		)
 	}
 

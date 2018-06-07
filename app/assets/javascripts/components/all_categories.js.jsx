@@ -8,27 +8,19 @@ var Categories = React.createClass({
 		this.props.handleUpdate(category);
 	},
 
-	passProductId(id){
-		this.props.handleProductDelete(id);
-	},
-
-	passProduct(product) {
-		this.props.handleProductUpdate(product);
-	},
-
 	render() {
 		let categories = this.props.categories.map((category) => {
 			return (
-				<div key={category.id} className="card mb-3">
-					<Category category={category} total={this.props.totalByCat(category.id)}
+				<div key={category.id}>
+					<Category category={category}
 					handleDelete={this.handleDelete.bind(this, category.id)} 
-					handleUpdate={this.onUpdate} products={this.props.products} passProductId={this.passProductId} passProduct={this.passProduct} totalByCat={this.props.totalByCat} />
+					handleUpdate={this.onUpdate} />
 				</div>
 			);
 		});
 
 		return (
-			<div className="card-deck accordion" id="accordion">
+			<div className="col-sm-12 col-md-6">
 				{categories}
 			</div>
 		)

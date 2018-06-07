@@ -1,8 +1,23 @@
-a:hover{ background-color: grey ! important; }
 body, html {
-    height: 0%;
     background-color: #e9ecef !important;
 }
+*{
+	font-family: 'Raleway', sans-serif !important;
+}
+
+.btn-mint {
+	background-color: #40c9a2;
+	color: white;
+}
+.btn-mint:hover {
+	background-color: #9fe4d0;
+	color: white;
+}
+.mint-hover {
+	background-color: #9fe4d0;
+	color: white;
+}
+
 .bg-dark {
 	max-width: 100% !important;
 }
@@ -42,6 +57,35 @@ li.nav-item {
     border-bottom: 1px solid rgba(0,0,0,.125);
     height: 3em;
 }
+.logged-out-homepage {
+	background-image: url(bg.jpg);
+	background-size: cover;
+	height: 110vh;
+}
+.logged-out-homepage .card {
+	width: 20rem;
+	background-color: #ebebeb;
+	border: none;
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.logged-out-homepage .logo {
+	width: 150px;
+	height: 200px;
+}
+.logged-out-homepage .btn {
+	border-radius: 0px;
+	height: 3.5em;
+}
+.logged-out-homepage label {
+	margin-bottom: 0px;
+	color: #40c9a2;
+}
+.logged-out-homepage p {
+	font-family: 'Raleway Medium', sans-serif !important;
+	color: white;
+	font-size: 17px;
+}
+
 // .card-holder {
 // 	position: relative;
 // 	display: -ms-flexbox;
@@ -64,9 +108,9 @@ li.nav-item {
 }
 
 @media (min-width: 768px) { 
-	body, html {
-	    height: 100%;
-	}
+	// body, html {
+	//     height: 100%;
+	// }
 	.bg-dark {
 		max-width: 5em !important;
 	}
@@ -85,6 +129,11 @@ li.nav-item {
 	}
 	.main .card-deck {
 	    flex-direction: row !important;
+	}
+	.logged-out-homepage {
+		background-image: url(bg.jpg);
+		background-size: cover;
+		height: 100vh;
 	}
 }
 

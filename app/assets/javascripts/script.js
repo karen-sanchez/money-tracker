@@ -14,7 +14,6 @@ $(document).ready(function() {
 		$(this).find('.categories-total').text('Total: $ ' + ' ' + total);
 	});
 
-
 	// create unique attr names for collapse table to work
 	$('#accordion .card-header').each(function(i) {
 		$(this).attr('id', 'heading' + i)
@@ -30,12 +29,19 @@ $(document).ready(function() {
 		$(this).attr('aria-labelledby', 'heading' + i);
 	});
 
-	// $('#accordion .card').on('show.bs.collapse', function () {
-	// 	$('.card').not(this).each(function(){
-	// 	    $(this).attr('class', 'card-holder');
-	// 	});
-	// 	$(this).attr('class', 'card');
-	// })
+	// alternate between sign-in anf log-in forms
+	$('.signup-form').hide();
+
+	$('.link-to-signup').click(function(){
+		$('.signup-form').show();
+		$('.login-form').hide();
+		$(this).parent().parent().parent().parent().find('.signup-form .link-to-signup').addClass('mint-hover');
+	});
+
+	$('.link-to-login').click(function(){
+		$('.signup-form').hide();
+		$('.login-form').show();
+	});
 
 
 });

@@ -1,20 +1,20 @@
-<aside class="col-12 col-md-2 p-0 bg-dark">
-	<nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row">
+<aside class="col-12 col-md-2 p-0 sidenav-parent">
+	<nav class="navbar navbar-expand sidenav flex-md-column flex-row">
 		<div class="collapse navbar-collapse">
 			<ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
 				<li class="nav-item">
-					<a class="navbar-brand" href="#"><i class="fab fa-3x fa-medium"></i></a>
+					<a href="/"><%= image_tag("tracker-logo.png", :alt => "logo", :class => "nav-logo") %></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/"><i class="fas fa-3x fa-home"></i></a>
+				<li class="nav-item my-auto">
+					<a class="nav-link" href="/"><i class="fas fa-2x fa-home"></i></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/categories"><i class="fas fa-3x fa-plus-circle"></i></a>
+				<li class="nav-item my-auto">
+					<a class="nav-link" href="/categories"><i class="fas fa-2x fa-plus-circle"></i></a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item my-auto">
 				  <%= link_to destroy_user_session_path, class: 'nav-link', method: :delete do %>
 				    <span>
-				      <i class="fas fa-3x fa-sign-out-alt"></i>
+				      <i class="fas fa-2x fa-sign-out-alt"></i>
 				    </span>
 				  <% end %>
 				</li>

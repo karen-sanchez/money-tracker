@@ -1,10 +1,4 @@
-body, html {
-    background-color: #e9ecef !important;
-}
-*{
-	font-family: 'Raleway', sans-serif !important;
-}
-
+// GLOBAL
 .btn-mint {
 	background-color: #40c9a2;
 	color: white;
@@ -18,12 +12,35 @@ body, html {
 	color: white;
 }
 
-.bg-dark {
-	max-width: 100% !important;
+// SIDEBAR NAV
+aside .nav-logo {
+	width: 50px;
+	height: 60px;
 }
-li.nav-item {
-    padding-bottom: 0em;
+aside .fas {
+	color: white;
 }
+aside .sidenav {
+	background-color: #393939;
+}
+
+@media (min-width: 768px) {
+	aside.sidenav-parent {
+		max-width: 5em !important;
+	}
+	aside li.nav-item {
+	    padding-bottom: 4em;
+	}
+	aside .navbar {
+		display: block;
+	}
+	aside .sidenav {
+		height: 100vh;
+		min-height: 100%;
+	}
+}
+
+// MAIN PAGE = CATEGORIES PAGE
 .main .list-group-item {
 	padding: 0 !important;
 }
@@ -40,15 +57,15 @@ li.nav-item {
 	padding: 0.5rem !important;
 }
 .main .panel-title a:after {
-    font-family:FontAwesome;
-    content:'\f078';
-    float:right;
-    font-size:10px;
-    font-weight:300;
+    font-family: FontAwesome;
+    content: '\f078';
+    float: right;
+    font-size: 10px;
+    font-weight: 300;
 }
 .main .panel-title a.collapsed:after {
-    font-family:FontAwesome;
-    content:'\f077';
+    font-family: FontAwesome;
+    content: '\f077';
 }
 .main .header{
 	padding: .75rem 1.25rem;
@@ -57,10 +74,48 @@ li.nav-item {
     border-bottom: 1px solid rgba(0,0,0,.125);
     height: 3em;
 }
+
+@media (min-width: 576px) {
+	.main .card-deck {
+	    display: flex !important;
+	    flex-direction: column !important;
+	}
+}
+
+@media (min-width: 768px) { 
+	.main .btn-block {
+	  width: 30% !important;
+	}
+	.main .container {
+	    max-width: 650px !important;
+	}
+	// .main aside {
+	// 	height: 100vh;
+	// }
+	.main .card-deck {
+	    flex-direction: row !important;
+	}
+}
+
+@media (min-width: 900px) {
+	.main .container {
+	    max-width: 800px !important;
+	}
+}
+
+@media (min-width: 1000px) {
+	.main .container {
+	    max-width: 900px !important;
+	}
+}
+
+
+// LOGGED OUT HOMEPAGE
 .logged-out-homepage {
 	background-image: url(bg.jpg);
 	background-size: cover;
 	height: 110vh;
+	font-family: 'Raleway', sans-serif !important;
 }
 .logged-out-homepage .card {
 	width: 20rem;
@@ -86,6 +141,17 @@ li.nav-item {
 	font-size: 17px;
 }
 
+@media (min-width: 768px) { 
+	.logged-out-homepage {
+		background-image: url(bg.jpg);
+		background-size: cover;
+		height: 100vh;
+	}
+}
+
+
+
+
 // .card-holder {
 // 	position: relative;
 // 	display: -ms-flexbox;
@@ -100,52 +166,5 @@ li.nav-item {
 // 	border-radius: .25rem;
 // }
 
-@media (min-width: 576px) {
-	.main .card-deck {
-	    display: flex !important;
-	    flex-direction: column !important;
-	}
-}
 
-@media (min-width: 768px) { 
-	// body, html {
-	//     height: 100%;
-	// }
-	.bg-dark {
-		max-width: 5em !important;
-	}
-
-	li.nav-item {
-	    padding-bottom: 4em;
-	}
-	.main .btn-block {
-	  width: 30% !important;
-	}
-	.main .container {
-	    max-width: 650px !important;
-	}
-	.main aside {
-		height: 100vh;
-	}
-	.main .card-deck {
-	    flex-direction: row !important;
-	}
-	.logged-out-homepage {
-		background-image: url(bg.jpg);
-		background-size: cover;
-		height: 100vh;
-	}
-}
-
-@media (min-width: 900px) {
-	.main .container {
-	    max-width: 800px !important;
-	}
-}
-
-@media (min-width: 1000px) {
-	.main .container {
-	    max-width: 900px !important;
-	}
-}
 

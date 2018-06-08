@@ -19,7 +19,7 @@ $(document).ready(function() {
 		$(this).attr('id', 'heading' + i)
 	});
 
-	$('#accordion .btn-link').each(function(i) {
+	$('#accordion .btn-mint').each(function(i) {
 		$(this).attr('data-target', '#collapse' + i);
 		$(this).attr('aria-controls', 'collapse' + i);
 	});
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	$('.link-to-signup').click(function(){
 		$('.signup-form').show();
 		$('.login-form').hide();
-		$(this).parent().parent().parent().parent().find('.signup-form .link-to-signup').addClass('mint-hover');
+		$(this).parent().parent().parent().parent().find('.signup-form .link-to-signup').addClass('bg-mint-hover');
 	});
 
 	$('.link-to-login').click(function(){

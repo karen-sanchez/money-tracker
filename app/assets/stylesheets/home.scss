@@ -7,7 +7,11 @@
 	background-color: #9fe4d0;
 	color: white;
 }
-.mint-hover {
+.bg-mint {
+	background-color: #40c9a2!important;
+	color: white;
+}
+.bg-mint-hover {
 	background-color: #9fe4d0;
 	color: white;
 }
@@ -149,7 +153,32 @@ aside .sidenav {
 	}
 }
 
-
+// LOGGED IN HOMEPAGE
+.logged-in-homepage {
+	font-family: 'Raleway', sans-serif !important;
+}
+.logged-in-homepage h1 {
+	font-family: 'Fjalla One', sans-serif;
+	color: white;
+	font-size: 4em;
+}
+.logged-in-homepage .card-header button:after {
+    font-family: FontAwesome;
+    content: '\f078';
+    float: right;
+    font-size: 17px;
+    font-weight: 300;
+}
+.logged-in-homepage .card-header button.collapsed:after {
+    font-family: FontAwesome;
+    content: '\f077';
+}
+.logged-in-homepage .home-bg {
+	background-image: url(header-bg.jpg);
+	height: 250px;
+	width: 100%;
+	background-size: cover;
+}
 
 
 // .card-holder {

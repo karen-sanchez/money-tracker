@@ -32,15 +32,13 @@ var Category = React.createClass({
 
 
 		return (
-			<div className="list-group">
+			<div className="list-group mb-1">
 				<div className="list-group-item">
-					<div className="row p-2">
-						<div className="col-8">
-							{name}
-						</div>
-						<div className="col-4">
-							<button type="button" className="close" onClick={this.props.handleDelete}><i className="fas fa-times"></i></button>
-							<button type="button" className="close" onClick={this.handleEdit}>{this.state.editable ? submit : edit }</button>
+					<div className="d-flex justify-content-between align-items-center">
+						<small>{name}</small>
+						<div className="btn-group">
+							<button type="button" className="btn btn-md bg-light" onClick={this.props.handleDelete}><i className="fas fa-times"></i></button>
+							<button type="button" className="btn btn-md bg-light" onClick={this.handleEdit}>{this.state.editable ? submit : edit }</button>
 						</div>
 					</div>
 				</div>

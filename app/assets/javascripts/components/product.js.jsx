@@ -39,15 +39,13 @@ var Product = React.createClass({
 		let submit = <i className="fas fa-check"></i>;
 
 		return (
-			<div className="list-group">
+			<div className="list-group mb-1">
 				<div className="list-group-item">
-					<div className="row p-2">
-						<div className="col-8">
-							<strong>Item: </strong>{itemName} | 	<strong>Price: </strong>${itemPrice}
-						</div>
-						<div className="col-4">
-							<button type="button" className="close" onClick={this.handleProductEdit}> {this.state.editable ? submit : edit }</button>
-							<button type="button" className="close" onClick={this.props.handleProductDelete}><i className="fas fa-times"></i></button>
+					<div className="d-flex justify-content-between align-items-center">
+						<small><strong>Item: </strong>{itemName} | <strong>Price: </strong>${itemPrice}</small>
+						<div className="btn-group">
+							<button type="button" className="btn btn-md bg-light" onClick={this.handleProductEdit}> {this.state.editable ? submit : edit }</button>
+							<button type="button" className="btn btn-md bg-light" onClick={this.props.handleProductDelete}><i className="fas fa-times"></i></button>
 						</div>
 					</div>
 				</div>

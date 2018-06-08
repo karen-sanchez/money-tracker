@@ -50,17 +50,25 @@ var ItemsList = React.createClass({
 
 		return (
 			<div>
-				<div className="header">
-					<button type="button" className="close" onClick={this.props.handleDelete}><i className="fas fa-times"></i></button>
-					<button type="button" className="close" onClick={this.handleEdit}>{this.state.editable ? submit : edit }</button>
+				<div className="header bg-light p-0 m-0">
+					<div className="row no-gutters">
+						<div className="col-6 text-center">
+							<button type="button" className="btn btn-md bg-light-custom" onClick={this.handleEdit}>{this.state.editable ? submit : edit }</button>
+						</div>
+						<div className="col-6 text-center">						
+							<button type="button" className="btn btn-md bg-light-custom" onClick={this.props.handleDelete}><i className="fas fa-times"></i></button>
+						</div>
+					</div>					
 				</div>
-				<div className="card-header" id="headingOne">
-					<h4 className="panel-title"><a className="btn-link" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{name}</a></h4>
-				</div>
+				<div className="card-header bg-mint" id="headingOne">
+					<small className="panel-title"><a className="btn btn-link btn-block text-left" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{name}</a></small>
+				</div>	
 				<div id="collapseOne" className="collapse" aria-labelledby="headingOne">
 					<div className="card-body">
 						{products}
-						<AmountBox total={this.props.totalByCat(cat)} />
+						<div className="text-white bg-blue">
+							<AmountBox total={this.props.totalByCat(cat)} />
+						</div>
 					</div>
 				</div>
 			</div>

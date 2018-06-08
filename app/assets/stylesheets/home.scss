@@ -15,6 +15,43 @@
 	background-color: #66d3b4;
 	color: white;
 }
+.bg-blue {
+	background-color: #415674;
+	color: white;
+}
+.btn-blue {
+	background-color: #415674;
+	color: white;
+}
+.btn-blue:hover {
+	background-color: #5e7ca5
+}
+.bg-light-custom {
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+}
+.bg-light-custom:hover {
+	background-color: #e2e6ea;
+}
+.bg-mint .btn {
+	color: white;
+	text-decoration: none;
+}
+.bg-mint a:hover {
+    text-decoration: none;
+    color: white;
+}
+.panel-title a:after {
+    font-family: FontAwesome;
+    content: '\f078';
+    float: right;
+    font-size: 10px;
+    font-weight: 300;
+}
+.panel-title a.collapsed:after {
+    font-family: FontAwesome;
+    content: '\f077';
+}
 
 // SIDEBAR NAV
 aside .nav-logo {
@@ -51,35 +88,31 @@ aside .sidenav {
 .main .form-inline {
 	width: 100%;
 }
-.main .card-header {
-	height: 3em;
-}
 .main .card-deck .card {
     min-width: 220px;
 }
 .main .card-body {
 	padding: 0.5rem !important;
 }
-.main .panel-title a:after {
-    font-family: FontAwesome;
-    content: '\f078';
-    float: right;
-    font-size: 10px;
-    font-weight: 300;
-}
-.main .panel-title a.collapsed:after {
-    font-family: FontAwesome;
-    content: '\f077';
-}
 .main .header{
 	padding: .75rem 1.25rem;
     margin-bottom: 0;
-    // background-color: #40c9a2;
-    // border-bottom: 1px solid rgba(0,0,0,.125);
-    height: 3em;
 }
-.main .card-header {
-	// background-color: #9fe4d0;
+.main{
+	font-family: 'Raleway', sans-serif !important;
+}
+.main .bg-light-custom {
+	height: 100%;
+	width: 100%;
+	border-radius: 0px;
+}
+.main .bg-light-custom:hover {
+	height: 100%;
+	width: 100%;
+	border-radius: 0px;
+}
+.main .list-group-item small {
+	margin-left: 5px;
 }
 
 @media (min-width: 576px) {
@@ -96,9 +129,6 @@ aside .sidenav {
 	.main .container {
 	    max-width: calc(100% - 200px);
 	}
-	// .main aside {
-	// 	height: 100vh;
-	// }
 	.main .card-deck {
 	    flex-direction: row !important;
 	}
@@ -153,38 +183,11 @@ aside .sidenav {
 	color: white;
 	font-size: 4em;
 }
-.logged-in-homepage .card-header button:after {
-    font-family: FontAwesome;
-    content: '\f078';
-    float: right;
-    font-size: 17px;
-    font-weight: 300;
-}
-.logged-in-homepage .card-header button.collapsed:after {
-    font-family: FontAwesome;
-    content: '\f077';
-}
 .logged-in-homepage .home-bg {
 	background-image: url(header-bg.jpg);
 	height: 250px;
 	width: 100%;
 	background-size: cover;
 }
-
-
-// .card-holder {
-// 	position: relative;
-// 	display: -ms-flexbox;
-// 	display: flex;
-// 	-ms-flex-direction: column;
-// 	flex-direction: column;
-// 	min-width: 0;
-// 	word-wrap: break-word;
-// 	background-color: none;
-// 	background-clip: border-box;
-// 	border: none;
-// 	border-radius: .25rem;
-// }
-
 
 

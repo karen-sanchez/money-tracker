@@ -119,15 +119,16 @@ var Main = React.createClass({
 							<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
 						</div>
 						<div className="container">
-							<div className="row">
+							<div className="row mb-5 mt-5">
 								<Categories categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
 								<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
 							</div>
-							<h3>Categories with products to buy</h3>
 							<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
-							<div className="row">
-								<div className="col-sm-12 col-md-6 mx-auto">
-									<h4><AmountBox total={this.total()} /></h4>
+							<div className="row mt-5 mb-5">
+								<div className="col-sm-12 col-md-4 mx-auto">
+									<div className="text-white bg-blue p-3">
+										<h4><AmountBox total={this.total()} /></h4>
+									</div>
 								</div>
 							</div>
 						</div>

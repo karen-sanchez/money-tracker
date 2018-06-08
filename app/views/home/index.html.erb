@@ -15,20 +15,30 @@
 						<div class="card parent-date">
 
 							<div class="card-header bg-mint" id="headingOne">
-								<h5 class="mb-0">
-									<button class="btn btn-mint btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<h5 class="panel-title mb-0">
+									<a class="btn btn-mint btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 									<%= month.strftime('%B, %Y') %>
-									</button>
+									</a>
 								</h5>
 							</div>
-
 							<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 								<div class="container">
 									<% for category in categories %>
-										<div class="card mt-3">
-											<div class="card-header"><strong><%= category.name %> on <%= category.category_create_date.to_date.to_s(:long) %></strong></div>
+										<div class="card mt-3 p-1">
+											<div class="card-header">
+												<div class="d-flex justify-content-between align-items-center">
+													<small><%= category.name %></small>
+													<small><%= category.category_create_date.to_date.to_s(:long) %></small>
+												</div>
+											</div>
 											<% category.products.each do |product| %>
-												<li class="list-group-item"> <%= product.name %> | $<%= product.price %></li>
+												<div class="list-group mb-1">
+													<div class="list-group-item">
+														<div class="d-flex justify-content-between align-items-center">
+															<small><%= product.name %> | $<%= product.price %></small>
+														</div>
+													</div>
+												</div>
 												<!-- <li class="product-price list-group-item"><%#= product.price %></li> -->
 											<% end %>
 										</div>

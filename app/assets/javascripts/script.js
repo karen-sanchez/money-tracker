@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-	function getSum(total, num) {
-	    return total + num;
-	}
-	// get item prices, parse, add, and display
-	$('.parent-date').each(function() {		
-		let pricesArray = [];
+	// homepage get item prices, parse, add, and display
+	let pricesArray = [];
+	const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+	$('.parent-date .list-group-item').each(function() {			
 		let findPrice = $(this).find('.product-price').text();
 		pricesArray.push(findPrice)
-		let parseArray = pricesArray.join(' ').split(' ').map(parseFloat);
-		let filterArray = parseArray.filter(Boolean);
-		let total = filterArray.reduce(getSum, 0);
-		$(this).find('.categories-total').text('Total: $ ' + ' ' + total);
 	});
+
+	let result = pricesArray.map(Number);
+	let sum = result.reduce(reducer, 0);
+
+	$('.categories-total').text('Total: $ ' + ' ' + sum);
 
 	// create unique attr names for collapse table to work
 	$('#accordion .card-header').each(function(i) {

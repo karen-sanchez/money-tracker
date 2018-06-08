@@ -34,8 +34,8 @@
 											<% category.products.each do |product| %>
 												<div class="list-group mb-1">
 													<div class="list-group-item">
-														<div class="d-flex justify-content-between align-items-center">
-															<small><%= product.name %> | $<%= product.price %></small>
+														<div class="justify-content-between align-items-center">
+															<small><%= product.name %></small> | <small class="product-price"><%= product.price %></small>
 														</div>
 													</div>
 												</div>

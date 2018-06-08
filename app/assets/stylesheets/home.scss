@@ -4,7 +4,7 @@
 	color: white;
 }
 .btn-mint:hover {
-	background-color: #9fe4d0;
+	background-color: #66d3b4;
 	color: white;
 }
 .bg-mint {
@@ -12,7 +12,7 @@
 	color: white;
 }
 .bg-mint-hover {
-	background-color: #9fe4d0;
+	background-color: #66d3b4;
 	color: white;
 }
 
@@ -74,9 +74,12 @@ aside .sidenav {
 .main .header{
 	padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
+    // background-color: #40c9a2;
+    // border-bottom: 1px solid rgba(0,0,0,.125);
     height: 3em;
+}
+.main .card-header {
+	// background-color: #9fe4d0;
 }
 
 @media (min-width: 576px) {
@@ -86,12 +89,12 @@ aside .sidenav {
 	}
 }
 
-@media (min-width: 768px) { 
-	.main .btn-block {
-	  width: 30% !important;
+@media (min-width: 760px) { 
+	.main .container-fluid {
+	    width: calc(100% - 80px);
 	}
 	.main .container {
-	    max-width: 650px !important;
+	    max-width: calc(100% - 200px);
 	}
 	// .main aside {
 	// 	height: 100vh;
@@ -99,20 +102,8 @@ aside .sidenav {
 	.main .card-deck {
 	    flex-direction: row !important;
 	}
-}
 
-@media (min-width: 900px) {
-	.main .container {
-	    max-width: 800px !important;
-	}
 }
-
-@media (min-width: 1000px) {
-	.main .container {
-	    max-width: 900px !important;
-	}
-}
-
 
 // LOGGED OUT HOMEPAGE
 .logged-out-homepage {

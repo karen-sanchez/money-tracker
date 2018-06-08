@@ -113,18 +113,22 @@ var Main = React.createClass({
 			<div className="container-fluid h-100 main">
 				<div className="row h-100">
 					<Navbar />
-					<div className="container">
-						<NewCategoryForm handleSubmit={this.handleSubmit} />
-						<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
-						<div className="row">
-							<Categories categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
-							<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
+					<div className="container-fluid p-0">
+						<div className="jumbotron">
+							<NewCategoryForm handleSubmit={this.handleSubmit} />
+							<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
 						</div>
-						<h3>Categories with products to buy</h3>
-						<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
-						<div className="row">
-							<div className="col-sm-12 col-md-6 mx-auto">
-								<h4><AmountBox total={this.total()} /></h4>
+						<div className="container">
+							<div className="row">
+								<Categories categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
+								<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
+							</div>
+							<h3>Categories with products to buy</h3>
+							<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
+							<div className="row">
+								<div className="col-sm-12 col-md-6 mx-auto">
+									<h4><AmountBox total={this.total()} /></h4>
+								</div>
 							</div>
 						</div>
 					</div>

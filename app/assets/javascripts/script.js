@@ -24,6 +24,11 @@ $(document).ready(function() {
 		$(this).attr('aria-controls', 'collapse' + i);
 	});
 
+	$('#accordion .btn-link').each(function(i) {
+		$(this).attr('data-target', '#collapse' + i);
+		$(this).attr('aria-controls', 'collapse' + i);
+	});
+
 	$('#accordion .collapse').each(function(i) {
 		$(this).attr('id', 'collapse' + i);
 		$(this).attr('aria-labelledby', 'heading' + i);

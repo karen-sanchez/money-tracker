@@ -22,11 +22,11 @@ var Products = React.createClass({
 			<div id="accordion" className="col-sm">
 				<div className="card">
 					<div className="card-header bg-mint" id="headingOne">
-					  <h5 className="panel-title mb-0">
-					    <a className="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					    	All items
-					    </a>
-					  </h5>
+						<h5 className="panel-title mb-0">
+							<a className="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								All items
+							</a>
+						</h5>
 					</div>
 					<div id="collapseOne" className="collapse show" aria-labelledby="headingOne">
 						<div className="card-body">

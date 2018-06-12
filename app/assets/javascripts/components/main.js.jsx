@@ -120,7 +120,7 @@ var Main = React.createClass({
 						</div>
 						<div className="container">
 							<div className="row mb-5 mt-5">
-								<Categories categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
+								<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} />
 								<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
 							</div>
 							<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />

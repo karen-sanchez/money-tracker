@@ -1,5 +1,13 @@
 var NewCategoryForm = React.createClass({
 
+	getInitialState() {
+	    return { name: ''};
+	},
+
+	handleChange(event) {
+		this.setState({name: event.target.value});
+	},
+
 	handleClick() {
 
 		let date = new Date();
@@ -17,6 +25,7 @@ var NewCategoryForm = React.createClass({
 			data: { category: { name: name, category_create_date: dateFormat } },
 			success: (category) => {
 				this.props.handleSubmit(category);
+				this.setState({name: ''});
 			}
 		});
 	},
@@ -26,7 +35,7 @@ var NewCategoryForm = React.createClass({
 			<form className="mb-3 mt-3">
 				<div className="form-row">
 					<div className="form-group col-md-3">
-						<input className="form-control mr-sm-2" onChange={ (e) => this.setState({ name: e.target.value }) } placeholder="Enter new category" />
+						<input className="form-control mr-sm-2" onChange={this.handleChange} value={this.state.name} placeholder="Enter new category" />
 					</div>
 					<div className="form-group col-md-3">
 						<button type="button" className="btn btn-md btn-mint btn-block" onClick={this.handleClick}>Submit</button>

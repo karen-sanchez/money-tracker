@@ -48,6 +48,10 @@ $(document).ready(function() {
 		$('.login-form').show();
 	});
 
+	// alternate between table/no data msg
+	if($('.logged-in-homepage').find('.parent-date').length != 0){
+		$('.empty-message').hide();
+	};
 
 });
 

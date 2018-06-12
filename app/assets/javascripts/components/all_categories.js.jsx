@@ -8,12 +8,16 @@ var Categories = React.createClass({
 		this.props.handleUpdate(category);
 	},
 
+	removeProduct(products) {
+		this.props.handleProductDelete(products);
+	},
+
 	render() {
 		let categories = this.props.categories.map((category) => {
 			return (
 				<div key={category.id}>
-					<Category category={category}
-					handleDelete={this.handleDelete.bind(this, category.id)} 
+					<Category category={category} products={this.props.products} removeProduct={this.removeProduct}
+					handleDelete={this.handleDelete.bind(this, category.id)}
 					handleUpdate={this.onUpdate} />
 				</div>
 			);

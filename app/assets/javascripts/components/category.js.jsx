@@ -4,6 +4,23 @@ var Category = React.createClass({
 		return { editable: false }
 	},
 
+	handleClick() {
+		let cat = this.props.category.id;
+		let products = this.props.products.map((product) => {
+			if ( product.category_id === cat ) { return product.id; }
+		});
+
+		let productId = products.filter(function(n){ return n != undefined });
+		if (productId.length > 1){
+			// for(var i = 1; i <= productId.length; i++){
+			// 	// this.props.mytest(productId)
+			// }
+		} else {
+			this.props.removeProduct(productId)
+		}
+		this.props.handleDelete();
+	},
+
 	handleEdit() {
 		if (this.state.editable) {
 			let name = this.state.name;
@@ -37,8 +54,8 @@ var Category = React.createClass({
 					<div className="d-flex justify-content-between align-items-center">
 						<small>{name}</small>
 						<div className="btn-group">
-							<button type="button" className="btn btn-md bg-light" onClick={this.props.handleDelete}><i className="fas fa-times"></i></button>
 							<button type="button" className="btn btn-md bg-light" onClick={this.handleEdit}>{this.state.editable ? submit : edit }</button>
+							<button type="button" className="btn btn-md bg-light" onClick={this.handleClick}><i className="fas fa-times"></i></button>					
 						</div>
 					</div>
 				</div>

@@ -13,7 +13,6 @@
 				<div id="accordion">
 					<% @categories_months.each do |month, categories| %>
 						<div class="card parent-date">
-
 							<div class="card-header bg-mint" id="headingOne">
 								<h5 class="panel-title mb-0">
 									<a class="btn btn-mint btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -39,7 +38,6 @@
 														</div>
 													</div>
 												</div>
-												<!-- <li class="product-price list-group-item"><%#= product.price %></li> -->
 											<% end %>
 										</div>
 									<% end %>
@@ -48,7 +46,10 @@
 								</div>
 							</div>
 						</div>  
-					<% end %> 
+					<% end %>
+				</div>
+				<div class="empty-message jumbotron text-center">
+					<p>You do not have any categories yet.</p>
 				</div>
 			</div>
 		</div>

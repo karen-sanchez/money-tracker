@@ -52,7 +52,6 @@
     font-family: FontAwesome;
     content: '\f077';
 }
-
 // SIDEBAR NAV
 aside .nav-logo {
 	width: 50px;
@@ -137,7 +136,7 @@ aside .sidenav {
 
 // LOGGED OUT HOMEPAGE
 .logged-out-homepage {
-	background-image: url(bg.jpg);
+	background-image: url(bg100.jpg);
 	background-size: cover;
 	height: 110vh;
 	font-family: 'Raleway', sans-serif !important;
@@ -168,7 +167,7 @@ aside .sidenav {
 
 @media (min-width: 768px) { 
 	.logged-out-homepage {
-		background-image: url(bg.jpg);
+		background-image: url(bg1200.jpg);
 		background-size: cover;
 		height: 100vh;
 	}
@@ -184,7 +183,7 @@ aside .sidenav {
 	font-size: 4em;
 }
 .logged-in-homepage .home-bg {
-	background-image: url(header-bg.jpg);
+	background-image: url(header-bg1200.jpg);
 	height: 250px;
 	width: 100%;
 	background-size: cover;

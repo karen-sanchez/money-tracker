@@ -21,21 +21,16 @@ var Category = React.createClass({
 		this.props.handleDelete();
 	},
 
-	handleEdit() {
-		if (this.state.editable) {
-			let name = this.state.name;
-			this.onUpdate();
-		}
-		this.setState({ editable: !this.state.editable })
+	componentDidMount() {
+		this.setState({ name: this.props.category.name});
 	},
 
-	onUpdate() {
+	handleEdit() {
 		if (this.state.editable) {
 			let id = this.props.category.id;
-			let name  = this.state.name;
-
-			let category = { id: id, name: name }
-
+			let name = this.state.name;
+			let category = {id: id , name: name};
+			
 			this.props.handleUpdate(category);
 		}
 		this.setState({ editable: !this.state.editable })

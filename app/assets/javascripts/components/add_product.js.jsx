@@ -51,7 +51,7 @@ var NewProductForm = React.createClass({
 							<option value="">Select category</option>
 							{categories.map(category => {
 							  return (
-							    <option key={category.name} value={category.id}>{category.name}</option>
+							    <option key={category.id} value={category.id}>{category.name}</option>
 							  );
 							})}
 						</select>

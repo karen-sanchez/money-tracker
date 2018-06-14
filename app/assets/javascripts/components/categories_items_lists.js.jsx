@@ -28,7 +28,7 @@ var CategoriesWithItemsList = React.createClass({
 		});
 
 		return (
-			<div className="card-deck accordion" id="accordion">
+			<div className="card-deck accordion third-row" id="accordion">
 				{categories}
 			</div>
 		)

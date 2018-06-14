@@ -59,7 +59,7 @@ var ItemsList = React.createClass({
 					<small className="panel-title"><a className="btn btn-link btn-block text-left" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{name}</a></small>
 				</div>	
 				<div id="collapseOne" className="collapse" aria-labelledby="headingOne">
-					<div className="card-body">
+					<div className="card-header">
 						{products}
 						<div className="text-white bg-blue">
 							<AmountBox total={this.props.totalByCat(cat)} />

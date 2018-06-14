@@ -90,8 +90,18 @@ aside .sidenav {
 .main .card-deck .card {
     min-width: 220px;
 }
-.main .card-body {
+.main .card-total{
 	padding: 0.5rem !important;
+}
+.main .third-row .card-body {
+	padding: 0.5rem !important;
+}
+.main .third-row .card-header {
+	border: 1px solid rgba(0,0,0,.125);
+	background-color: white;
+}
+.main .third-row .card {
+	border: none;
 }
 .main .header{
 	padding: .75rem 1.25rem;

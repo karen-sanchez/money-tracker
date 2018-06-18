@@ -148,7 +148,7 @@ aside .sidenav {
 .logged-out-homepage {
 	background-image: url(bg1200.jpg);
 	background-size: cover;
-	height: 110vh;
+	height: 130vh;
 	font-family: 'Raleway', sans-serif !important;
 }
 .logged-out-homepage .card {
@@ -173,6 +173,29 @@ aside .sidenav {
 	font-family: 'Raleway Medium', sans-serif !important;
 	color: white;
 	font-size: 17px;
+}
+.logged-out-homepage label#user_email-error {
+	color: orangered;
+	font-size: 12px;
+}
+.logged-out-homepage label#user_password-error {
+	color: orangered;
+	font-size: 12px;
+}
+.logged-out-homepage .form-control.error { 
+	border: 1px solid orangered; 
+}
+.logged-out-homepage label#user_username-error {
+	color: orangered;
+	font-size: 12px;
+}
+.logged-out-homepage label#password-error{
+	color: orangered;
+	font-size: 12px;
+}
+.logged-out-homepage label#user_password_confirmation-error {
+	color: orangered;
+	font-size: 12px;
 }
 
 @media (min-width: 768px) { 

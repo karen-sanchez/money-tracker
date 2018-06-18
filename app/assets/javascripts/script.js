@@ -59,7 +59,7 @@ $(document).ready(function() {
 		rules: {
 			"user[username]": {
 				required: true,
-				maxlength: 10
+				maxlength: 12
 			},
 			"user[password]": {
 				required: true
@@ -70,10 +70,12 @@ $(document).ready(function() {
 		},
 		messages: {
 			"user[username]": {
-				maxlength: "No more than 10"
+				maxlength: "No more than 12 characters."
 			}
 		}
 	});
+	
+
 
 });
 

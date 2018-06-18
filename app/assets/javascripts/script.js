@@ -53,5 +53,27 @@ $(document).ready(function() {
 		$('.empty-message').hide();
 	};
 
+	$("#loginForm").validate();
+
+	$("#signupForm").validate({
+		rules: {
+			"user[username]": {
+				required: true,
+				maxlength: 10
+			},
+			"user[password]": {
+				required: true
+			},
+			"user[password_confirmation]": {
+				equalTo: "#password"
+			}
+		},
+		messages: {
+			"user[username]": {
+				maxlength: "No more than 10"
+			}
+		}
+	});
+
 });
 

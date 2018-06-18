@@ -70,15 +70,15 @@
 						<button type="button" class="col link-to-signup btn btn-mint">Sign up</button>
 					</div>
 					<div class="p-4">
-						<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'loginForm' }) do |f| %>
 							<div class="field">
 								<%= f.label :email %><br />
-								<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+								<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
 							</div>
 
 							<div class="field">
 								<%= f.label :password %><br />
-								<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+								<%= f.password_field :password, autocomplete: "off", class: "form-control", required: true %>
 							</div>
 
 							<% if devise_mapping.rememberable? -%>
@@ -103,17 +103,17 @@
 						<button type="button" class="col link-to-signup btn btn-mint">Sign up</button>
 					</div>
 					<div class="p-4">
-						<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+						<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: 'signupForm' }) do |f| %>
 							<%= devise_error_messages! %>
 
 								<div class="field">
 									<%= f.label :email %><br />
-									<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+									<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
 								</div>
 
 								<div class="field">
 									<%= f.label :username %><br />
-									<%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+									<%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control", required: true, minlength: "3" %>
 								</div>
 
 								<div class="field">
@@ -121,12 +121,12 @@
 										<% if @minimum_password_length %>
 											<em>(<%= @minimum_password_length %> characters minimum)</em>
 										<% end %><br />
-									<%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
+									<%= f.password_field :password, autocomplete: "off", class: "form-control", required: true, id: "password" %>
 								</div>
 
 								<div class="field">
 									<%= f.label :password_confirmation %><br />
-									<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+									<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", required: true  %>
 								</div>
 
 								<div class="actions text-center">

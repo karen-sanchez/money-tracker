@@ -52,7 +52,7 @@ var NewCategoryForm = React.createClass({
 			data: { category: { name: name, category_create_date: dateFormat } },
 			success: (category) => {
 				this.props.handleSubmit(category);
-				this.setState({name: ''});
+				this.setState({name: '', formValid: false});
 			}
 		});
 	},
@@ -61,7 +61,7 @@ var NewCategoryForm = React.createClass({
 		return (
 			<form className="mb-3 mt-3">
 			<div className="panel panel-default">
-			  <FormErrors formErrors={this.state.formErrors} />
+				<FormErrors formErrors={this.state.formErrors} />
 			</div>
 				<div className="form-row">
 					<div className={`form-group col-md-3 ${this.errorClass(this.state.formErrors.name)}`}>

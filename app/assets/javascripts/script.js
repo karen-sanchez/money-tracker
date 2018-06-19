@@ -53,6 +53,7 @@ $(document).ready(function() {
 		$('.empty-message').hide();
 	};
 
+	// validate signup/login
 	$("#loginForm").validate();
 
 	$("#signupForm").validate({

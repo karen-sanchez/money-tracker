@@ -225,4 +225,10 @@ aside .sidenav {
 	background-size: cover;
 }
 
+// VALIDATIONS ERRORS
+.main .has-error > .form-control:focus { 
+	border-color: #dc3545;
+	box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.2);
+}
+
 

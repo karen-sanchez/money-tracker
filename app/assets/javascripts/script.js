@@ -73,9 +73,7 @@ $(document).ready(function() {
 				maxlength: "No more than 12 characters."
 			}
 		}
-	});
-	
-
+	});	
 
 });
 

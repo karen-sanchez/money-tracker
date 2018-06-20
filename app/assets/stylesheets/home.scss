@@ -200,7 +200,7 @@ aside .sidenav {
 
 @media (min-width: 768px) { 
 	.logged-out-homepage {
-		background-image: url(bg1200.jpg);
+		background-image: image-url('bg1200.jpg');
 		background-size: cover;
 		height: 100vh;
 	}

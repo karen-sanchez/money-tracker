@@ -7,7 +7,7 @@ var Navbar = React.createClass({
 					<div className="collapse navbar-collapse">
 						<ul className="flex-md-column flex-row navbar-nav w-100 justify-content-between">
 							<li className="nav-item">
-								<a href="/"><img src="/tracker-logo.png" className="nav-logo" /></a>
+								<a href="/"><img src="tracker-logo.png" className="nav-logo" /></a>
 							</li>
 							<li className="nav-item my-auto">
 								<a className="nav-link" href="/"><i className="fas fa-2x fa-home"></i></a>

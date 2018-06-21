@@ -112,7 +112,7 @@ var Main = React.createClass({
 		return (
 			<div className="container-fluid h-100 main">
 				<div className="row h-100">
-					<Navbar />
+					{/*<Navbar />*/}
 					<div className="container-fluid p-0">
 						<div className="jumbotron">
 							<NewCategoryForm handleSubmit={this.handleSubmit} />

@@ -110,26 +110,21 @@ var Main = React.createClass({
 
 	render() {
 		return (
-			<div className="container-fluid h-100 main">
-				<div className="row h-100">
-					{/*<Navbar />*/}
-					<div className="container-fluid p-0">
-						<div className="jumbotron">
-							<NewCategoryForm handleSubmit={this.handleSubmit} />
-							<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
-						</div>
-						<div className="container">
-							<div className="row mb-5 mt-5">
-								<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} />
-								<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
-							</div>
-							<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
-							<div className="row mt-5 mb-5">
-								<div className="col-sm-12 col-md-4 mx-auto">
-									<div className="text-white bg-blue p-3">
-										<h4><AmountBox total={this.total()} /></h4>
-									</div>
-								</div>
+			<div>
+				<div className="jumbotron">
+					<NewCategoryForm handleSubmit={this.handleSubmit} />
+					<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
+				</div>
+				<div className="container">
+					<div className="row mb-5 mt-5">
+						<Categories products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} />
+						<Products products={this.state.products} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} />
+					</div>
+					<CategoriesWithItemsList products={this.state.products} categories={this.state.categories} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} handleProductDelete={this.handleProductDelete} handleProductUpdate={this.handleProductUpdate} updateProducts={this.updateProducts} totalByCat={this.totalByCat} />
+					<div className="row mt-5 mb-5">
+						<div className="col-sm-12 col-md-4 mx-auto">
+							<div className="text-white bg-blue p-3">
+								<h4><AmountBox total={this.total()} /></h4>
 							</div>
 						</div>
 					</div>

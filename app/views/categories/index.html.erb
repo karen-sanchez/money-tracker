@@ -1,2 +1,8 @@
-<%= render 'partials/nav' %>
-<%= react_component 'Main', catdata: @categories_by_user, itemsdata: @products %>
+<div class="container-fluid h-100 main">
+	<div class="row h-100">
+		<%= render 'partials/nav' %>
+		<div class="col p-0">
+			<%= react_component 'Main', catdata: @categories_by_user, itemsdata: @products %>
+		</div>
+	</div>
+</div>

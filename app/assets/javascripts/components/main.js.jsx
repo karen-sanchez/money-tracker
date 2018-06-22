@@ -111,7 +111,7 @@ var Main = React.createClass({
 	render() {
 		return (
 			<div>
-				<div className="jumbotron">
+{/*				<div className="jumbotron">
 					<NewCategoryForm handleSubmit={this.handleSubmit} />
 					<NewProductForm handleSubmitProduct={this.handleSubmitProduct} categories={this.state.categories} />
 				</div>
@@ -128,7 +128,7 @@ var Main = React.createClass({
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>*/}
 			</div>
 		);
 	}
